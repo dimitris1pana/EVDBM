@@ -37,7 +37,7 @@ To run these notebooks, the following Python libraries are required:
 - `seaborn`
 - `scipy`
 - `scikit-learn`
-- `pyEVA` (optional, for Extreme Value Analysis)
+- `pyextremes` (for Extreme Value Analysis)
 
 Install the dependencies via `pip`:
 
