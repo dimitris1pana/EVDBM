@@ -70,9 +70,9 @@ The analysis follows a structured approach using **Extreme Value Analysis (EVA)*
 ## Results
 $$ B_{\text{total}} = S_{\text{count}} \times \sum_{i=1}^{n} w_i \times \Delta C_{\text{low}}^{\text{norm}}(V_i) $$
 
-- \( S_{\text{count}} \): Scaling factor for the count of extreme observations.
-- \( w_i \): Weight assigned to each variable \( V_i \).
-- \( \Delta C_{\text{low}}^{\text{norm}}(V_i) \): Normalized difference in variable \( V_i \) between two scenarios.
+- $$\( S_{\text{count}} \)$$: Scaling factor for the count of extreme observations.
+- $$\( w_i \)$$: Weight assigned to each variable $$\( V_i \)$$.
+- $$\( \Delta C_{\text{low}}^{\text{norm}}(V_i) \)$$: Normalized difference in variable $$\( V_i \)$$ between two scenarios.
 
 - **Single Scenario Analysis**: The EVA results highlight which variables are most correlated with extreme events and provide insights into the factors influencing system performance under extreme conditions.
 - **Scenario Comparison**: The comparison provides a benchmarking score that indicates which scenario performs better under extreme conditions and offers insights into the variables that are most influential.
