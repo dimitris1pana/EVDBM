@@ -48,7 +48,6 @@ pip install numpy pandas matplotlib seaborn scipy scikit-learn
 1. **Clone the repository**:
 
    git clone https://github.com/dimitris1pana/EVDBM.git
-   cd eva-scenario-comparison 
 
    ## Methodology
 
@@ -69,7 +68,7 @@ The analysis follows a structured approach using **Extreme Value Analysis (EVA)*
    The following formula is applied to compare scenarios:
 
 ## Results
-B_{\text{total}} = S_{\text{count}} \times \sum_{i=1}^{n} w_i \times \Delta C_{\text{low}}^{\text{norm}}(V_i)
+$$ B_{\text{total}} = S_{\text{count}} \times \sum_{i=1}^{n} w_i \times \Delta C_{\text{low}}^{\text{norm}}(V_i) $$
 
 - \( S_{\text{count}} \): Scaling factor for the count of extreme observations.
 - \( w_i \): Weight assigned to each variable \( V_i \).
