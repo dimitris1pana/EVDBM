@@ -70,7 +70,7 @@ The analysis follows a structured approach using **Extreme Value Analysis (EVA)*
 ## Results
 $$ B_{\text{i}} = S_j\times\sum_{i=1}^{n} b(V_i) $$
 
-- $$ b(V_i) =  w_i \times{C_\text{extreme}}(V_i) $$: Scaling factor for the count of extreme observations.
+- $$\ b(V_i) =  w_i \times{C_\text{extreme}}(V_i)$$: Scaling factor for the count of extreme observations.
 - $$\( w_i \)$$: Weight assigned to each variable $$\( V_i \)$$.
 - $$ S_j = E_c \times P(X>x) $$: Accounting for historical occurrences and the associated probabilities with a final scaling factor
 - $$ E_c = \frac{N}{\sum_{k=1}^{m} N_k} $$: frequency and intensity of extreme events by normalizing the number of extreme events
