@@ -75,7 +75,7 @@ $$ B_{\text{i}} = S_j\times\sum_{i=1}^{n} b(V_i) $$
 - $$\ S_j = E_c \times P(X>x) $$: Accounting for historical occurrences and the associated probabilities with a final scaling factor
 - $$\ E_c = \frac{N}{\sum_{k=1}^{m} N_k} $$: frequency and intensity of extreme events by normalizing the number of extreme events
    - N  is the number of extreme events for a case (c)
-   - $$ \sum_{k=1}^{m} N_k $$ is the total number of extreme events across all cases
+   - $$\ \sum_{k=1}^{m} N_k $$ is the total number of extreme events across all cases
 
 - **Single Scenario Analysis**: The EVA results highlight which variables are most correlated with extreme events and provide insights into the factors influencing system performance under extreme conditions.
 - **Scenario Comparison**: The comparison provides a benchmarking score to identify which scenario performs better under extreme conditions and offers insights into the variables that are most influential.
