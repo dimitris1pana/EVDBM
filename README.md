@@ -24,7 +24,7 @@ The analysis conducted in these notebooks focuses on the identification of **ext
 ## Files
 
 - **`energyProductionEVA.ipynb`**: Notebook performing EVA on a single use case.
-- **`energYproductionEVA2CompareScenarios.ipynb`**: Notebook comparing two different use cases under extreme event conditions.
+- **`energYproductionEVA2CompareScenarios.ipynb`**: Notebook for the Extreme Value Dynamic Benchmarking Method (EVDM) incorporating the Dynamic Identification of Significant Correlation (DISC) - thresholding algortihm. The purpose of this is the extraction of insights from the EVA results and and scoring each use case.
 - **Data Files**: Please ensure the necessary data files (time series of relevant variables) are available in the same directory as the notebooks.
 
 ## Dependencies
@@ -68,14 +68,17 @@ The analysis follows a structured approach using **Extreme Value Analysis (EVA)*
    The following formula is applied to compare scenarios:
 
 ## Results
-$$ B_{\text{total}} = S_{\text{count}} \times \sum_{i=1}^{n} w_i \times \Delta C_{\text{low}}^{\text{norm}}(V_i) $$
+$$ B_{\text{i}} = S_j\times\sum_{i=1}^{n} b(V_i) $$
 
-- $$\( S_{\text{count}} \)$$: Scaling factor for the count of extreme observations.
+- $$ b(V_i) =  w_i \times{C_\text{extreme}}(V_i) $$: Scaling factor for the count of extreme observations.
 - $$\( w_i \)$$: Weight assigned to each variable $$\( V_i \)$$.
-- $$\( \Delta C_{\text{low}}^{\text{norm}}(V_i) \)$$: Normalized difference in variable $$\( V_i \)$$ between two scenarios.
+- $$ S_j = E_c \times P(X>x) $$: Accounting for historical occurrences and the associated probabilities with a final scaling factor
+- $$ E_c = \frac{N}{\sum_{k=1}^{m} N_k} $$: frequency and intensity of extreme events by normalizing the number of extreme events
+   - N  is the number of extreme events for a case (c)
+   - $$ \sum_{k=1}^{m} N_k $$ is the total number of extreme events across all cases
 
 - **Single Scenario Analysis**: The EVA results highlight which variables are most correlated with extreme events and provide insights into the factors influencing system performance under extreme conditions.
-- **Scenario Comparison**: The comparison provides a benchmarking score that indicates which scenario performs better under extreme conditions and offers insights into the variables that are most influential.
+- **Scenario Comparison**: The comparison provides a benchmarking score to identify which scenario performs better under extreme conditions and offers insights into the variables that are most influential.
 
 The results can be used to guide operational decisions, risk management strategies, or further analyses based on extreme event occurrences in various domains.
 
@@ -86,3 +89,15 @@ Contributions to this repository are welcome. Feel free to fork the project and 
 ## License
 
 This project is licensed under the MIT License. Please see the LICENSE file for more details.
+
+## Citation (bibtex)
+@misc{panagoulias2024integratingdynamiccorrelationshifts,
+      title={Integrating Dynamic Correlation Shifts and Weighted Benchmarking in Extreme Value Analysis}, 
+      author={Dimitrios P. Panagoulias and Elissaios Sarmas and Vangelis Marinakis and Maria Virvou and George A. Tsihrintzis},
+      year={2024},
+      eprint={2411.13608},
+      archivePrefix={arXiv},
+      primaryClass={stat.AP},
+      url={https://arxiv.org/abs/2411.13608}, 
+}
+```
