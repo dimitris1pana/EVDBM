@@ -25,6 +25,11 @@ The analysis conducted in these notebooks focuses on the identification of **ext
 
 - **`energyProductionEVA.ipynb`**: Notebook performing EVA on a single use case.
 - **`energYproductionEVA2CompareScenarios.ipynb`**: Notebook for the Extreme Value Dynamic Benchmarking Method (EVDM) incorporating the Dynamic Identification of Significant Correlation (DISC) - thresholding algortihm. The purpose of this is the extraction of insights from the EVA results and and scoring each use case.
+- **`energYproductionEVA2CompareScenariosGridSearch.ipynb**: Implements the EVDBM framework. This notebook:
+	-	Integrates EVA with the DISC-Thresholding algorithm for enhanced interpretability.
+	-	Uses a grid search approach to optimize weight shifting among related variables, thereby fine-tuning the benchmarking scores.
+	-	Demonstrates significant improvements in  R^2  (an increase of 13.21%) compared to standard EVA.
+	-	Provides a detailed comparison of scenarios (e.g., different PV farms) while maintaining transparency in variable importance.
 - **Data Files**: Please ensure the necessary data files (time series of relevant variables) are available in the same directory as the notebooks.
 
 ## Dependencies
@@ -71,16 +76,36 @@ The analysis follows a structured approach using **Extreme Value Analysis (EVA)*
 $$ B_{\text{i}} = S_j\times\sum_{i=1}^{n} b(V_i) $$
 
 - $$\ b(V_i) =  w_i \times{C_\text{extreme}}(V_i)$$: Scaling factor for the count of extreme observations.
-- $$\( w_i \)$$: Weight assigned to each variable $$\( V_i \)$$.
+- $$\ ( w_i ) $$ : Weight assigned to each variable $$\ ( V_i ) $$.
 - $$\ S_j = E_c \times P(X>x) $$: Accounting for historical occurrences and the associated probabilities with a final scaling factor
 - $$\ E_c = \frac{N}{\sum_{k=1}^{m} N_k} $$: frequency and intensity of extreme events by normalizing the number of extreme events
    - N  is the number of extreme events for a case (c)
    - $$\ \sum_{k=1}^{m} N_k $$ is the total number of extreme events across all cases
+- Empirical calculation of R^2:
+   -  $$\ R^2 = 1 - \frac{\text{SS}{\text{residual}}}{\text{SS}{\text{total}}} $$
+   where: 
+      - $$\ \text{SS}{\text{residual}} = \sum{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 $$
+      - $$\ \text{SS}{\text{total}} = \sum{i=1}^{n} \left( y_i - \bar{y} \right)^2 $$
+- Grid Search Weight Shifting for Optimization:
+   -  $$\ \text{SumweightedCircumstances} = \sum_{i=1}^{n} w_i \cdot V_i $$
+   where: 
+      - $$\ w_1, w_2, \dots, w_n\ = \underset{\{w_1, w_2, \dots, w_n\}}{\text{argmax}} \left[ R^2 = 1 - \frac{\text{SS}{\text{residual}}}{\text{SS}{\text{total}}} \right] $$
+      - $$\ \text{SS}{\text{residual}} = \sum{i=1}^{n} \left( y_i - \hat{y}i \right)^2, \quad \text{SS}{\text{total}} = \sum_{i=1}^{n} \left( y_i - \bar{y} \right)^2 $$
+
+
+
 
 - **Single Scenario Analysis**: The EVA results highlight which variables are most correlated with extreme events and provide insights into the factors influencing system performance under extreme conditions.
 - **Scenario Comparison**: The comparison provides a benchmarking score to identify which scenario performs better under extreme conditions and offers insights into the variables that are most influential.
 
 The results can be used to guide operational decisions, risk management strategies, or further analyses based on extreme event occurrences in various domains.
+
+## Performance Gains with EVDBM:
+| **Metric** | **EVA (Baseline)** | **EVDBM (Optimized)** | **Improvement** |
+|-----------|-------------------|----------------------|----------------|
+| **R²**    | -4.253            | -3.691               | **+13.21%**   |
+| **MAE**   | 9.691             | 9.740                | **+0.51%**    |
+| **MSE**   | 115.897           | 117.110              | **+1.05%**    |
 
 ## Contributing
 
