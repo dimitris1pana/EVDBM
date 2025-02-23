@@ -84,16 +84,13 @@ $$ B_{\text{i}} = S_j\times\sum_{i=1}^{n} b(V_i) $$
 - Empirical calculation of R^2:
    -  $$\ R^2 = 1 - \frac{\text{SS}{\text{residual}}}{\text{SS}{\text{total}}} $$
    where: 
-      - $$\ \text{SS}{\text{residual}} = \sum{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 $$
-      - $$\ \text{SS}{\text{total}} = \sum{i=1}^{n} \left( y_i - \bar{y} \right)^2 $$
+      - $$\ \text{SS}{\text{residual}} = \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 $$
+      - $$\ \text{SS}{\text{total}} = \sum_{i=1}^{n} \left( y_i - \bar{y} \right)^2 $$
 - Grid Search Weight Shifting for Optimization:
    -  $$\ \text{SumweightedCircumstances} = \sum_{i=1}^{n} (w_i \cdot V_i) $$
    where: 
-      - $$\ w_1, w_2, \dots, w_n\ = \underset{\{w_1, w_2, \dots, w_n\}}{\text{argmax}} \left[ R^2 = 1 - \frac{\text{SS}{\text{residual}}}{\text{SS}{\text{total}}} \right] $$
-      - $$\ \text{SS}{\text{residual}} = \sum{i=1}^{n} \left( y_i - \hat{y}i \right)^2, \quad \text{SS}{\text{total}} = \sum_{i=1}^{n} \left( y_i - \bar{y} \right)^2 $$
-
-
-
+      - $$\mathbf{w}^* = \arg\max_{\mathbf{w}} \left( R^2 = 1 - \frac{\text{SS}{\text{residual}}}{\text{SS}{\text{total}}} \right) $$
+         - $ \mathbf{w}^*$ represents the optimal weight vector that maximizes    $R^2$
 
 - **Single Scenario Analysis**: The EVA results highlight which variables are most correlated with extreme events and provide insights into the factors influencing system performance under extreme conditions.
 - **Scenario Comparison**: The comparison provides a benchmarking score to identify which scenario performs better under extreme conditions and offers insights into the variables that are most influential.
