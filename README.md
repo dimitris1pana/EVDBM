@@ -87,7 +87,7 @@ $$ B_{\text{i}} = S_j\times\sum_{i=1}^{n} b(V_i) $$
       - $$\ \text{SS}{\text{residual}} = \sum{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 $$
       - $$\ \text{SS}{\text{total}} = \sum{i=1}^{n} \left( y_i - \bar{y} \right)^2 $$
 - Grid Search Weight Shifting for Optimization:
-   -  $$\ \text{SumweightedCircumstances} = \sum_{i=1}^{n} w_i \cdot V_i $$
+   -  $$\ \text{SumweightedCircumstances} = \sum_{i=1}^{n} (w_i \cdot V_i) $$
    where: 
       - $$\ w_1, w_2, \dots, w_n\ = \underset{\{w_1, w_2, \dots, w_n\}}{\text{argmax}} \left[ R^2 = 1 - \frac{\text{SS}{\text{residual}}}{\text{SS}{\text{total}}} \right] $$
       - $$\ \text{SS}{\text{residual}} = \sum{i=1}^{n} \left( y_i - \hat{y}i \right)^2, \quad \text{SS}{\text{total}} = \sum_{i=1}^{n} \left( y_i - \bar{y} \right)^2 $$
