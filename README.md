@@ -90,7 +90,7 @@ $$ B_{\text{i}} = S_j\times\sum_{i=1}^{n} b(V_i) $$
    -  $$\ \text{SumweightedCircumstances} = \sum_{i=1}^{n} (w_i \cdot V_i) $$
    where: 
       - $$\mathbf{w}^* = \arg\max_{\mathbf{w}} \left( R^2 = 1 - \frac{\text{SS}{\text{residual}}}{\text{SS}{\text{total}}} \right) $$
-         - $ \mathbf{w}^*$ represents the optimal weight vector that maximizes    $R^2$
+         - $$ \mathbf{w}^*$$ represents the optimal weight vector that maximizes    $$R^2$$
 
 - **Single Scenario Analysis**: The EVA results highlight which variables are most correlated with extreme events and provide insights into the factors influencing system performance under extreme conditions.
 - **Scenario Comparison**: The comparison provides a benchmarking score to identify which scenario performs better under extreme conditions and offers insights into the variables that are most influential.
